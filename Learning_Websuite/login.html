@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>CA Signup Page</title>
+      <meta name="description" content="Learn to code.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/logo-main.jpg">
+      <link rel="stylesheet" href="stylelogin.css">
+   </head>
+   <body>
+      <div class="wrapper">
+         <div class="input-data">
+            <input type="text" required id="name">
+            <div class="underline"></div>
+            <label>Name</label>
+         </div>
+         <br><br>
+         <div class="input-data">
+            <input type="text" required id="email">
+            <div class="underline"></div>
+            <label>Email Id</label>
+         </div>
+         <br><br>
+         <div class="input-data">
+            <input type="password" required id="password">
+            <div class="underline"></div>
+            <label>Password</label>
+         </div>
+         <br><br>
+         <div class="input-data">
+            <input type="password" required id="reenter-password">
+            <div class="underline"></div>
+            <label>Reenter Password</label>
+         </div>
+         <br><br>
+         <button class="signup-button" id="signup-button" onclick="redirectToHome()">Sign Up</button>
+      </div>
+      <script>
+         const inputs = document.querySelectorAll('input');
+         const button = document.getElementById('signup-button');
+
+         inputs.forEach(input => {
+            input.addEventListener('input', () => {
+               const allFilled = Array.from(inputs).every(input => input.value.trim() !== '');
+               button.style.display = allFilled ? 'block' : 'none';
+            });
+         });
+
+         function redirectToHome() {
+            window.location.href = 'home.html';
+         }
+      </script>
+   </body>
+</html>
